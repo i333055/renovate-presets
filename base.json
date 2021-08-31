@@ -1,0 +1,44 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "dryRun": true,
+  "extends": ["config:base", "github>whitesource/merge-confidence:beta", ":preserveSemverRanges", ":disableVulnerabilityAlerts"],
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "onboarding": false,
+  "platform": "github",
+  "ignoreNpmrcFile": true,
+  "enabledManagers": ["npm", "maven", "nvm"],
+  "maven": {
+    "fileMatch": [
+      "\\.pom\\.xml$",
+      "(^|/)pom\\.xml$",
+      "(^|/)external-dependencies\\.xml$"
+    ]
+  },
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "{{arg0}} Dependency Dashboard",
+  "dependencyDashboardHeader": "This issue contains a list of Renovate updates and their statuses for team {{arg0}}.",
+  "commitMessagePrefix": "{{arg0}} - ",
+  "branchPrefix": "renovate-{{arg0}}/",
+  "timezone": "Europe/Berlin",
+  "labels": ["renovate", "team-{{arg0}}"],
+  "assignAutomerge": true,
+  "prConcurrentLimit": 5,
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "prPriority": -1
+    },
+    {
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
+    }
+  ],
+  "requireConfig": false
+}
