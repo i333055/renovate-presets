@@ -4,6 +4,7 @@
   "extends": ["config:base", "github>whitesource/merge-confidence:beta", ":preserveSemverRanges", ":disableVulnerabilityAlerts"],
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "onboarding": false,
+  "requireConfig": false,
   "platform": "github",
   "ignoreNpmrcFile": true,
   "enabledManagers": ["npm", "maven", "nvm"],
@@ -39,6 +40,5 @@
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     }
-  ],
-  "requireConfig": false
+  ]
 }
