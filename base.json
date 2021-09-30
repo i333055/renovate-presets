@@ -22,7 +22,7 @@
   "branchPrefix": "renovate-{{arg0}}/",
   "timezone": "Europe/Berlin",
   "labels": ["renovate", "team-{{arg0}}"],
-  "commitMessageExtra" : "to {{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{{newValue}}}{{/if}}{{/if}}",
+  "commitMessageExtra" : "to {{#if isSingleVersion}}v{{{newVersion}}}{{else}}{{{newValue}}}{{/if}}",
   "assignAutomerge": true,
   "prConcurrentLimit": 5,
   "packageRules": [
